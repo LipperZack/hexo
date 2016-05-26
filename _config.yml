@@ -7,12 +7,12 @@ title: LipperZack's Blog
 subtitle: Warriors of the night~ assemble!
 description: a place to live~ a place to hide~ a place to think~ a place to high！ 
 author: LipperZack
-email: lipperzack@gmail.com
+email: hanye.zlp@alibaba-inc.com
 language: zh-CN
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://lipperhome.com
+url: http://lipperzack.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
