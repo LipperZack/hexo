@@ -1,0 +1,378 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>深入浅出javascript原型和闭包 | LipperZack&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="LipperZack">
+    
+    <meta name="description" content="javascript原型和闭包，一直是javascript中比较难理解的两个部分，却又非常重要、非常基础，也是与其他主流面向对象语言的最大区别。这部分网上教程遍地都是，水平也是层出不穷，但是真正能说对、而且说的透彻的非常少，为了不被复制粘贴的水军搞晕，所以还是按自己的思路整理了一套。
+目的是为了用最">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="LipperZack&#39;s Blog" title="LipperZack&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="LipperZack&#39;s Blog">LipperZack&#39;s Blog</a></h1>
+				<h2 class="blog-motto">Warriors of the night~ assemble!</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/">About</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:lipperhome.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/03/30/prototype/" title="深入浅出javascript原型和闭包" itemprop="url">深入浅出javascript原型和闭包</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://lipperhome.com" title="LipperZack">LipperZack</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-03-29T17:24:00.000Z" itemprop="datePublished">Mar 30 2015</time>
+    更新日期:<time datetime="2015-09-20T21:52:18.000Z" itemprop="dateModified">Sep 21 2015</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+		</div>
+		
+		<p>javascript原型和闭包，一直是javascript中比较难理解的两个部分，却又非常重要、非常基础，也是与其他主流面向对象语言的最大区别。这部分网上教程遍地都是，水平也是层出不穷，但是真正能说对、而且说的透彻的非常少，为了不被复制粘贴的水军搞晕，所以还是按自己的思路整理了一套。</p>
+<p>目的是为了用<code>最简单</code>的语言描述清楚这两个重要且基础的概念。如果你是个其他语言的开发，看了这个教程能明白，那我的目的就达到了。</p>
+<p>##1.简单概述<br>其实，“原型和闭包”，只是一种简单的称呼，真正要理解的，不是“原型和闭包”，而是“原型链”和“作用域链”。原型和闭包<a href="chrome://not-a-link" title="是因为他们说的不是一件事情" target="_blank" rel="external">没什么关系</a>，但是又有那么一点点的<a href="chrome://not-a-link" title="是因为他们都是取值问题，在哪里取的问题。还有为了解释他们，引入的两个概念都有“链”一说，类似树形结构查找父节点" target="_blank" rel="external">类似</a>。有很多人也在这个问题上<a href="http://stackoverflow.com/questions/27434357/scope-chain-look-up-vs-prototype-look-up-which-is-when" target="_blank" rel="external">混淆</a>。</p>
+<p>简单来讲，<br><code>闭包</code>（<code>作用域链</code>）说的是<code>变量</code>在某个场景下的取值问题。<br><code>原型</code>（<code>原型链</code>）说的是<code>变量的属性</code>在某个场景下的取值问题。</p>
+<p>当然这里我只是简单的用<code>变量</code>这个词，为的是让大家把关注点放在这两个关键概念的<a href="chrome://not-a-link" title="闭包-&gt;作用域链 &amp; 原型-&gt;原型链" target="_blank" rel="external">四个关键词</a>和他们的区别上。但是其实在js中，一切都是<a href="chrome://not-a-link" title="这里还有Object和Function的关系，稍后讨论" target="_blank" rel="external">对象</a>。</p>
+<p>##2.闭包<br>1、说到闭包一定要提到<a href="chrome://not-a-link" title="执行上下文环境(execution context)，简称上下文，在执行的时候才确定。" target="_blank" rel="external">上下文</a>和<a href="chrome://not-a-link" title="作用域(scope)，函数创建时就确定了。" target="_blank" rel="external">作用域</a>。这两个概念也十分类似，经常容易<a href="chrome://not-a-link" title="作用域是静态的，上下文是动态的。" target="_blank" rel="external">混淆</a>。在我们开始执行一个函数之前，<a href="chrome://not-a-link" title="执行上下文环境(execution context)，简称上下文，在执行的时候才确定。" target="_blank" rel="external">上下文</a>帮我们做了很多<a href="chrome://not-a-link" title="比如变量(函数表达式)的声明为undefined、赋值this、函数声明的赋值等等" target="_blank" rel="external">铺垫</a>。而<a href="chrome://not-a-link" title="还包括作用域链" target="_blank" rel="external">作用域</a>却是一个静态的概念，在函数创建的时候就已经确定好了。<br>2、同一个作用域，每次都会创建不同的上下文。它们的关系类似淘宝上同一套衣服(scope)，模特的图片和买家秀(不同的execution context)可能差别很大也可能差不多。<br>3、大家一般说的闭包，都是纠结<a href="chrome://not-a-link" title="在A作用域中使用的变量x，却没有在A作用域中声明（即在其他作用域中声明的），对于A作用域来说，x就是一个自由变量" target="_blank" rel="external">自由变量</a>的取值。那么其实很简单，一句话，即，要到<code>创建</code>这个函数的那个<a href="chrome://not-a-link" title="函数嵌套则产生作用域链，最里面的作用域如果找不到，可以到父一层的作用域取，其实在执行的时候这里应该是被保留的压栈的上下文" target="_blank" rel="external">作用域链</a>取值，而不是<code>调用</code>的<a href="chrome://not-a-link" title="很多人说自由变量从&quot;父作用域&quot;中取，这样描述容易产生歧义。" target="_blank" rel="external">父作用域</a>。<br>4、为了能够到创建的作用域中取值，必须暂时<a href="chrome://not-a-link" title="一般来说执行完毕后，gc会去销毁这部分内存" target="_blank" rel="external">不销毁</a>创建时候的上下文，即便已经执行完毕。所以闭包会增加内存开销。<br>5、函数作为返回值，函数作为参数传递时，就会产生闭包。<br>一个比较经典的栗子：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">a</span></span>() &#123; </span><br><span class="line">    var i = <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">b</span></span>() &#123; </span><br><span class="line">        alert(++i); </span><br><span class="line">    &#125; </span><br><span class="line">    <span class="built_in">return</span> b; </span><br><span class="line">&#125; </span><br><span class="line">var c = a(); </span><br><span class="line">c();</span><br></pre></td></tr></table></figure></p>
+<p>这个闭包里面，a的上下文一直没有销毁，每次调用c()，都可以使i自增。</p>
+<p>##3.原型<br>说到原型归根到底就是要讨论下Object和Function(还有根源对象和内置函数)，不过这个篇幅太大，我还是稍后做个专栏，现在我们还是讨论下比较表面的问题。<br>一个对象的大致<a href="chrome://not-a-link" title="这里指的是用new" target="_blank" rel="external">创建</a>过程，和它的属性a，我们是如何对其定义和取值的。<br>1、新建一个对象并赋值给变量a1：var a1 = {};<br>2、把这个对象的[[Prototype]]属性指向函数A的原型对象：a1.[[Prototype]] = A.prototype<br>3、调用函数A，同时把this指向1中创建的对象a1，对对象进行初始化：A.apply(a1,arguments)<br>我们找属性a的时候，通过对象的[[Prototype]]保存对另一个对象的引用，通过这个引用往上进行属性的查找，这就是原型链。<br>还是等有空把Object和Function讲一下吧，原型链这部分说的太浅显了。</p>
+<p>##refer<br><a href="http://www.cnblogs.com/wangfupeng1988/p/3977924.html" target="_blank" rel="external">深入理解javascript原型和闭包（完结）</a><br><a href="http://blog.csdn.net/zzulp/article/details/8144520" target="_blank" rel="external">JavaScript概念总结:作用域、闭包、对象与原型链</a><br><a href="http://blog.jobbole.com/19795/" target="_blank" rel="external">JavaScript原型和继承</a><br><a href="http://www.cnblogs.com/zhjjNo1/archive/2011/02/12/1951905.html" target="_blank" rel="external">js闭包(转载)</a><br><a href="http://blog.csdn.net/chunqiuwei/article/details/22092551" target="_blank" rel="external">javascript Prototype constructor的理解(一)</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/closure/">closure</a><a href="/tags/javascript/">javascript</a><a href="/tags/prototype/">prototype</a><a href="/tags/原型/">原型</a><a href="/tags/闭包/">闭包</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://lipperhome.com/2015/03/30/prototype/" data-title="深入浅出javascript原型和闭包 | LipperZack&#39;s Blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/08/23/debugWebviewInWechat/" title="Debug Webview In Wechat">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  Debug Webview In Wechat</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/03/02/addBaiduAnalytics/"  title="hexo add baidu analytics">
+ <strong>NEXT:</strong><br/> 
+ <span>hexo add baidu analytics
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/analytics/" title="analytics">analytics<sup>1</sup></a></li>
+		
+			<li><a href="/tags/closure/" title="closure">closure<sup>1</sup></a></li>
+		
+			<li><a href="/tags/debug/" title="debug">debug<sup>1</sup></a></li>
+		
+			<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/javascript/" title="javascript">javascript<sup>1</sup></a></li>
+		
+			<li><a href="/tags/prototype/" title="prototype">prototype<sup>1</sup></a></li>
+		
+			<li><a href="/tags/tools/" title="tools">tools<sup>2</sup></a></li>
+		
+			<li><a href="/tags/wechat/" title="wechat">wechat<sup>1</sup></a></li>
+		
+			<li><a href="/tags/原型/" title="原型">原型<sup>1</sup></a></li>
+		
+			<li><a href="/tags/微信/" title="微信">微信<sup>1</sup></a></li>
+		
+			<li><a href="/tags/闭包/" title="闭包">闭包<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://lipperhome.com" target="_blank" title="LipperZack">LipperZack</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"lipperhome"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>

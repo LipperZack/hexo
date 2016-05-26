@@ -1,0 +1,392 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>shadowsocks, a powerful tool you will need | LipperZack&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="LipperZack">
+    
+    <meta name="description" content="Why shadowsocks?You know the reason Y shadowsocks. so, Let’s get started:But FYI, here the Offical Site and Source
+VPSFirst of all you may need a VPS ">
+    
+    
+    
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="LipperZack&#39;s Blog" title="LipperZack&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="LipperZack&#39;s Blog">LipperZack&#39;s Blog</a></h1>
+				<h2 class="blog-motto">Warriors of the night~ assemble!</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/">About</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:lipperhome.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/02/05/shadowsocks/" title="shadowsocks, a powerful tool you will need" itemprop="url">shadowsocks, a powerful tool you will need</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://lipperhome.com" title="LipperZack">LipperZack</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-02-04T19:18:12.000Z" itemprop="datePublished">Feb 5 2015</time>
+    更新日期:<time datetime="2015-08-23T07:23:22.000Z" itemprop="dateModified">Aug 23 2015</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-shadowsocks"><span class="toc-number">1.</span> <span class="toc-text">Why shadowsocks?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#VPS"><span class="toc-number">1.1.</span> <span class="toc-text">VPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Server"><span class="toc-number">1.2.</span> <span class="toc-text">Server</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NPM"><span class="toc-number">1.2.1.</span> <span class="toc-text">NPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python"><span class="toc-number">1.2.2.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Source"><span class="toc-number">1.2.3.</span> <span class="toc-text">Source</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Client"><span class="toc-number">1.3.</span> <span class="toc-text">Client</span></a></li></ol></li></ol>
+		</div>
+		
+		<h1 id="Why-shadowsocks"><a href="#Why-shadowsocks" class="headerlink" title="Why shadowsocks?"></a>Why shadowsocks?</h1><p>You know the reason Y shadowsocks. so, Let’s get started:<br>But FYI, here the <a href="http://shadowsocks.org/en/index.html" target="_blank" rel="external">Offical Site</a> and <a href="https://github.com/shadowsocks/shadowsocks" target="_blank" rel="external">Source</a></p>
+<h2 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h2><p>First of all you may need a VPS out of the wall<br>There are way too many choises here:<br><a href="https://www.budgetvm.com/" target="_blank" rel="external">budgetvm</a>        $25/year<br><a href="http://www.laozuo.org/go/bandwagonhost-64m" target="_blank" rel="external">bandwagonhost</a>    $3.99/year<br>other Links:<br><a href="http://www.freehao123.com/yardvps-virpus/" target="_blank" rel="external">YardVPS,Virpus,BuyVM,BudgetVM</a><br><a href="http://www.laozuo.org/3269.html" target="_blank" rel="external">bandwagonhost from laozuo</a></p>
+<p>More prise more stable, it’s your choise</p>
+<h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><p>There are varies way to install shadowsocks with NPM,python or you can install with source.<br>While I installed my server with NPM.<br>If you have any problem, try another way for luck.  </p>
+<h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><p>####Install Node</p>
+<p>#####Debian and Ubuntu<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get install curl</span><br><span class="line">curl <span class="operator">-s</span>L https://deb.nodesource.com/setup | sudo bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure></p>
+<p>#####RHEL, CentOS or Fedora<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="operator">-s</span>L https://rpm.nodesource.com/setup | bash -</span><br><span class="line">yum install -y nodejs</span><br></pre></td></tr></table></figure></p>
+<p>#####源码安装<br>如果以上都不行的话，就源码安装吧。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc make gcc-c++ openssl-devel wget</span><br><span class="line">wget http://nodejs.org/dist/v0.<span class="number">10.26</span>/node-v0.<span class="number">10.26</span>.tar.gz</span><br><span class="line">tar -zvxf node-v0.<span class="number">10.26</span>.tar.gz</span><br><span class="line"><span class="built_in">cd</span> node-v0.<span class="number">10.26</span></span><br><span class="line">make</span><br><span class="line">make install</span><br><span class="line">node -v</span><br></pre></td></tr></table></figure></p>
+<p>####Install shadowsocks<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g shadowsocks</span><br></pre></td></tr></table></figure></p>
+<p>####Config shadowsocks<br>在任一目录，比如新建个/root/shadowsocks目录下创建文件config.json,这个就是ss的配置文件了。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"server"</span>:<span class="string">"198.98.117.102"</span>, //这里是你vps的ip地址</span><br><span class="line">    <span class="string">"server_port"</span>:<span class="number">8388</span>, //服务器端监听端口</span><br><span class="line">    <span class="string">"local_port"</span>:<span class="number">1080</span>, //客户端监听端口，这里可无视</span><br><span class="line">    <span class="string">"password"</span>:<span class="string">"barfoo!"</span>, //连接密码，随便射一个</span><br><span class="line">    <span class="string">"timeout"</span>:<span class="number">600</span>, //超时时间，默认即可</span><br><span class="line">    <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span> //加密方式，建议用“aes-<span class="number">256</span>-cfb”，当然你也可以选择table。。。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>比如我的配置，大家也可以使用，就是bandwagonhost的，有时候要经常重启<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"server"</span>:<span class="string">"104.224.161.153"</span>,</span><br><span class="line">    <span class="string">"server_port"</span>:<span class="number">8388</span>,</span><br><span class="line">    <span class="string">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="string">"password"</span>:<span class="string">"edmund"</span>,</span><br><span class="line">    <span class="string">"timeout"</span>:<span class="number">600</span>,</span><br><span class="line">    <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>开机自启动<br>编辑vps的rc.local，加入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ssserver -c /root/shadowsocks/config.json &gt; <span class="built_in">log</span> &amp;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>easy way to use, <a href="https://github.com/shadowsocks/shadowsocks" target="_blank" rel="external">Offical Site</a> also list the way to <a href="https://github.com/shadowsocks/shadowsocks/wiki/Shadowsocks-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="external">install</a> and <a href="https://github.com/shadowsocks/shadowsocks/wiki/Install-Shadowsocks-Server-on-Windows" target="_blank" rel="external">windows version</a></p>
+<hr>
+<h3 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum install git build-essential autoconf libtool openssl-devel gcc -y</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/madeye/shadowsocks-libev.git</span><br><span class="line"><span class="built_in">cd</span> shadowsocks-libev</span><br><span class="line">./configure </span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<p>启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup /usr/<span class="built_in">local</span>/bin/ss-server <span class="operator">-s</span> IP地址 -p 端口 -k 密码 -m 加密方式 &amp;</span><br></pre></td></tr></table></figure></p>
+<p>示例<br>nohup /usr/local/bin/ss-server -s 11.22.33.44 -p 12345 -k 12345678 -m aes-256-cfb &amp;<br>其中<br>-s 11.22.33.44 #指定服务器的IP地址，建议填0.0.0.0<br>-p 12345 #指定服务器绑定的IP地址<br>-k 12345678 #设置密码<br>-m aes-256-cfb #指定加密方式为aes-256-cfb，如果不指定，默认为table方式，加密方式不大会影响速度，但是table非常不安全。<br>加入开机启动：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"nohup /usr/local/bin/ss-server -s 11.22.33.44 -p 12345 -k 12345678 -m aes-256-cfb &amp;"</span> &gt;&gt; /etc/rc.local</span><br></pre></td></tr></table></figure></p>
+<p>请把IP 端口 密码 加密方式改成自己设置的。<br>检测shadowsocks是否在运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef | grep ss-server | grep -v ps | grep -v grep</span><br></pre></td></tr></table></figure></p>
+<p>当然要开防火墙<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iptables -F</span><br><span class="line">iptables -A INPUT -p tcp --dport 端口 -j ACCEPT</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h2><p><a href="https://shadowsocks.com/client.html" target="_blank" rel="external">various client</a>,<br>MAC推荐GoagentX，支持各种协议、PAC，直接新建一个shadowsocks代理，里面全部按照服务器的配置就好。可以全局或者规则使用了。<br>Windows推荐Goagent+，也是同样的配置一个shadowsocks，但是每个程序要自己去连代理，比如chrome的话要装switchysharp去连本地端口。</p>
+<p>参考：<br><a href="http://www.v5fm.com/centos-shadowsocks.html" target="_blank" rel="external">Centos搭建Shadowsocks的教程，并用Chrome成功访问Google</a><br><a href="http://dou.lu/1040.x" target="_blank" rel="external">ShadowSocks从入门到私通</a><br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager</a><br><a href="http://deffi.info/2014/11/20/VPS-+-Shadowsocks-+-COW-+Ocserv-+-AnyConnect-=-%E5%A4%9A%E5%B9%B3%E5%8F%B0%E7%BF%BB%E5%A2%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" target="_blank" rel="external">VPS + Shadowsocks + COW + Ocserv + AnyConnect = 多平台翻墙解决方案</a><br><a href="http://firedfox.tk/shadowsocks/" target="_blank" rel="external">If U dont wanna deploy</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/tools/">tools</a>
+  </div>
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://lipperhome.com/2015/02/05/shadowsocks/" data-title="shadowsocks, a powerful tool you will need | LipperZack&#39;s Blog" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/03/02/addBaiduAnalytics/" title="hexo add baidu analytics">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  hexo add baidu analytics</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/01/28/aboutHEXO/"  title="about Hexo">
+ <strong>NEXT:</strong><br/> 
+ <span>about Hexo
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-shadowsocks"><span class="toc-number">1.</span> <span class="toc-text">Why shadowsocks?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#VPS"><span class="toc-number">1.1.</span> <span class="toc-text">VPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Server"><span class="toc-number">1.2.</span> <span class="toc-text">Server</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NPM"><span class="toc-number">1.2.1.</span> <span class="toc-text">NPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python"><span class="toc-number">1.2.2.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Source"><span class="toc-number">1.2.3.</span> <span class="toc-text">Source</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Client"><span class="toc-number">1.3.</span> <span class="toc-text">Client</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/analytics/" title="analytics">analytics<sup>1</sup></a></li>
+		
+			<li><a href="/tags/closure/" title="closure">closure<sup>1</sup></a></li>
+		
+			<li><a href="/tags/debug/" title="debug">debug<sup>1</sup></a></li>
+		
+			<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+		
+			<li><a href="/tags/javascript/" title="javascript">javascript<sup>1</sup></a></li>
+		
+			<li><a href="/tags/prototype/" title="prototype">prototype<sup>1</sup></a></li>
+		
+			<li><a href="/tags/tools/" title="tools">tools<sup>2</sup></a></li>
+		
+			<li><a href="/tags/wechat/" title="wechat">wechat<sup>1</sup></a></li>
+		
+			<li><a href="/tags/原型/" title="原型">原型<sup>1</sup></a></li>
+		
+			<li><a href="/tags/微信/" title="微信">微信<sup>1</sup></a></li>
+		
+			<li><a href="/tags/闭包/" title="闭包">闭包<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2016 
+		
+		<a href="http://lipperhome.com" target="_blank" title="LipperZack">LipperZack</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"lipperhome"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
