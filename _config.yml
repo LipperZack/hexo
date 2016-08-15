@@ -56,10 +56,14 @@ tag: 2
 ## Hexo uses Connect as a server
 ## You can customize the logger format as defined in
 ## http://www.senchalabs.org/connect/logger.html
-port: 4000
-server_ip: localhost
-logger: false
-logger_format: dev
+server:
+  port: 5566
+  log: false
+  ip: 0.0.0.0
+# port: 4000
+# server_ip: localhost
+# logger: false
+# logger_format: dev
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
