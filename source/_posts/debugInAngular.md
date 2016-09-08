@@ -40,6 +40,9 @@ $($0).controller()
 比较方便的是有个inspector，可以让你select，然后看里面的值。但我始终感觉没有console拿到的方便，比如一个函数，我并没有办法定位到源码。
 另外的Service Dependencies貌似也没什么卵用
 
+# use as hack
+其实这样的话，完全能定位到一个组件的directive，界面的UI基本一览无遗
+
 # refer
 [Tips & Tricks for debugging unfamiliar AngularJS code](http://eng.localytics.com/tips-and-tricks-for-debugging-unfamiliar-angularjs-code/)
 [Debugging AngularJS Apps from the Console](http://blog.ionic.io/angularjs-console/)
