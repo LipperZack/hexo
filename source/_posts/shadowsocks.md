@@ -26,19 +26,19 @@ While I installed my server with NPM.
 If you have any problem, try another way for luck.  
 
 ### NPM
-####Install Node
-#####Debian and Ubuntu
+#### Install Node
+##### Debian and Ubuntu
 ``` bash
 apt-get install curl
 curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo apt-get install -y nodejs
 ```
-#####RHEL, CentOS or Fedora
+##### RHEL, CentOS or Fedora
 ``` bash
 curl -sL https://rpm.nodesource.com/setup | bash -
 yum install -y nodejs
 ```
-#####源码安装
+##### 源码安装
 如果以上都不行的话，就源码安装吧。
 ``` bash
 yum -y install gcc make gcc-c++ openssl-devel wget
@@ -49,11 +49,11 @@ make
 make install
 node -v
 ```
-####Install shadowsocks
+#### Install shadowsocks
 ``` bash
 npm install -g shadowsocks
 ```
-####Config shadowsocks
+#### Config shadowsocks
 在任一目录，比如新建个/root/shadowsocks目录下创建文件config.json,这个就是ss的配置文件了。
 ``` bash
 {

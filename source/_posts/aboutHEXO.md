@@ -5,41 +5,34 @@ date: 2015-01-28 3:24:00
 
 <!-- more -->
 
-## Quick Start
+# Quick Start
 
-### Create a new post
-
+## Create a new post
 ``` bash
 $ hexo new "My New Post"
 ```
-
 More info: [Writing](http://hexo.io/docs/writing.html)
 
-### Run server
-
+## Run server
 ``` bash
 $ hexo server
 ```
-
 More info: [Server](http://hexo.io/docs/server.html)
 
-### Generate static files
-
+## Generate static files
 ``` bash
 $ hexo generate
 ```
-
 More info: [Generating](http://hexo.io/docs/generating.html)
 
-### Deploy to remote sites
-
+## Deploy to remote sites
 ``` bash
 $ hexo deploy
 ```
 
 More info: [Deployment](http://hexo.io/docs/deployment.html)
 
-## DeployDetail
+# DeployDetail
 I'll list all the deploy step later. But there are some article you might be interested 
 [基于Hexo搭建个人博客](http://fy98.com/2014/03/03/build-blog-with-hexo/)
 [如何搭建一个独立博客——简明Github Pages与Hexo教程](http://cnfeat.com/2014/05/10/2014-05-11-how-to-build-a-blog/)
