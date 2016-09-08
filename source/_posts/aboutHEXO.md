@@ -1,4 +1,4 @@
-title: about Hexo
+title: About HEXO
 date: 2015-01-28 3:24:00
 ---
 [Hexo](http://hexo.io/), A fast, simple and powerful blog framework,powered by Node.js. Like [jekyll](http://jekyllrb.com/),it produce static html page for deployment, Support markdown and free hosting with GitHub Pages. Check [documentation](http://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [trobuleshooting](http://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).

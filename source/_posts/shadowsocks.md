@@ -1,4 +1,4 @@
-title: shadowsocks, a powerful tool you will need
+title: Shadowsocks, a powerful tool you will need
 tags: ["tools"]
 date: 2015-02-05 3:18:12
 ---

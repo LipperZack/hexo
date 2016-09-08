@@ -1,4 +1,4 @@
-title: hexo add baidu analytics
+title: HEXO add Baidu Analytics
 tags: ["hexo","analytics"]
 date: 2015-03-02 4:23:00
 ---

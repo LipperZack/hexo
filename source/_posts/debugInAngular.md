@@ -1,4 +1,4 @@
-title: debug in angular (could use when hack)
+title: Debug in Angular (could use when hack)
 tags: ["javascript","debug","angular","hack","trick"]
 date: 2016-01-02 16:33:00
 ---
