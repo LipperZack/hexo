@@ -24,7 +24,7 @@
 <meta property="og:image" content="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-localtbs.png">
 <meta property="og:image" content="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-installsuccess.png">
 <meta property="og:image" content="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-startdebug.png">
-<meta property="og:updated_time" content="2016-05-26T08:41:08.000Z">
+<meta property="og:updated_time" content="2016-09-08T08:07:55.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Debug Webview In Wechat">
 <meta name="twitter:description" content="之前的微信、手Q、Qzone之x5内核inspect调试解决方案调试比较麻烦，现在新版本已经完善了X5中的debug解决方案。You dont need alert any more.">
@@ -189,7 +189,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/analytics/">analytics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closure/">closure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型/">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/analytics/">analytics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closure/">closure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hack/">hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trick/">trick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型/">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
                     </div>
                 </section>
                 
@@ -308,10 +308,10 @@
           
         <p>之前的<a href="http://bbs.mb.qq.com/thread-243399-1-1.html?fid=93&amp;gid=45" target="_blank" rel="external">微信、手Q、Qzone之x5内核inspect调试解决方案</a>调试比较麻烦，现在新版本已经完善了X5中的debug解决方案。<br>You dont need alert any more. </p>
 <a id="more"></a>
-<h2 id="Reqiure"><a href="#Reqiure" class="headerlink" title="Reqiure"></a>Reqiure</h2><p>1、一台微信版本不低于6.2.4的安卓机，并开启调试模式<br>2、安装<a href="http://browser.qq.com/mac/index.html" target="_blank" rel="external">QQ浏览器9最新版</a>(必须是windows版，mac木有插件)<br>3、安装微信调试插件，地址栏直接输入qqbrowser://extensions#id=kghjlmdefodljabnacklekelfimgalmi<br>4.1、点击插件的“网页调试”，安装TBS环境<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-tbsstep1.png" alt=""><br>4.2、点击”一键安装TBS”按钮<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-tbsstep2.png" alt=""><br>4.3、打开微信,扫描二维码,微信上会弹出对应页面<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-tbssaoma.png" alt=""><br>4.4、依次点击”清除TBS内核”-&gt;”安装本地TBS内核”<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-cleartbs.png" alt=""><br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-localtbs.png" alt=""><br>4.5、等待不超过20s,会弹出确认框提示安装成功<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-installsuccess.png" alt=""><br>4.6、若等待超过30s无反应,请重新尝试”清除TBS内核”-&gt;”安装本地TBS内核”</p>
-<h2 id="Debug-Steps"><a href="#Debug-Steps" class="headerlink" title="Debug Steps"></a>Debug Steps</h2><p>1、微信打开网页<br>2、点击插件”开始调试”<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-startdebug.png" alt=""><br>3、之后就是熟悉的<a href="https://developer.chrome.com/devtools/docs/contributing" target="_blank" rel="external">chrome的devtools</a>，<a href="https://github.com/GoogleChrome/devtools-docs" target="_blank" rel="external">webinspect</a></p>
-<h2 id="Other-Usage"><a href="#Other-Usage" class="headerlink" title="Other Usage"></a>Other Usage</h2><p>基于微信X5的，都可以调试了，还有公众号、手机QQ webview调试、手机QQ空间 webview、以及手机QQ浏览器网页调试</p>
-<p>##Refer:<br><a href="http://bbs.mb.qq.com/thread-243399-1-1.html?fid=93&amp;gid=45" target="_blank" rel="external">微信、手Q、Qzone之x5内核inspect调试解决方案</a><br><a href="http://blog.qqbrowser.cc/kai-qi-wang-ye-diao-shi-jiao-cheng/" target="_blank" rel="external">开启网页调试教程</a></p>
+<h1 id="Reqiure"><a href="#Reqiure" class="headerlink" title="Reqiure"></a>Reqiure</h1><p>1、一台微信版本不低于6.2.4的安卓机，并开启调试模式<br>2、安装<a href="http://browser.qq.com/mac/index.html" target="_blank" rel="external">QQ浏览器9最新版</a>(必须是windows版，mac木有插件)<br>3、安装微信调试插件，地址栏直接输入qqbrowser://extensions#id=kghjlmdefodljabnacklekelfimgalmi<br>4.1、点击插件的“网页调试”，安装TBS环境<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-tbsstep1.png" alt=""><br>4.2、点击”一键安装TBS”按钮<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-tbsstep2.png" alt=""><br>4.3、打开微信,扫描二维码,微信上会弹出对应页面<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-tbssaoma.png" alt=""><br>4.4、依次点击”清除TBS内核”-&gt;”安装本地TBS内核”<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-cleartbs.png" alt=""><br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-localtbs.png" alt=""><br>4.5、等待不超过20s,会弹出确认框提示安装成功<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-installsuccess.png" alt=""><br>4.6、若等待超过30s无反应,请重新尝试”清除TBS内核”-&gt;”安装本地TBS内核”</p>
+<h1 id="Debug-Steps"><a href="#Debug-Steps" class="headerlink" title="Debug Steps"></a>Debug Steps</h1><p>1、微信打开网页<br>2、点击插件”开始调试”<br><img src="http://7xlaf5.com1.z0.glb.clouddn.com/debugWX-startdebug.png" alt=""><br>3、之后就是熟悉的<a href="https://developer.chrome.com/devtools/docs/contributing" target="_blank" rel="external">chrome的devtools</a>，<a href="https://github.com/GoogleChrome/devtools-docs" target="_blank" rel="external">webinspect</a></p>
+<h1 id="Other-Usage"><a href="#Other-Usage" class="headerlink" title="Other Usage"></a>Other Usage</h1><p>基于微信X5的，都可以调试了，还有公众号、手机QQ webview调试、手机QQ空间 webview、以及手机QQ浏览器网页调试</p>
+<p>#Refer:<br><a href="http://bbs.mb.qq.com/thread-243399-1-1.html?fid=93&amp;gid=45" target="_blank" rel="external">微信、手Q、Qzone之x5内核inspect调试解决方案</a><br><a href="http://blog.qqbrowser.cc/kai-qi-wang-ye-diao-shi-jiao-cheng/" target="_blank" rel="external">开启网页调试教程</a></p>
 
       
     </div>
@@ -323,7 +323,7 @@
         <p><span>本文标题:</span><a href="/2015/08/23/debugWebviewInWechat/">Debug Webview In Wechat</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LipperZack</a></p>
         <p><span>发布时间:</span>2015-08-23, 03:24:00</p>
-        <p><span>最后更新:</span>2016-05-26, 16:41:08</p>
+        <p><span>最后更新:</span>2016-09-08, 16:07:55</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2015/08/23/debugWebviewInWechat/" title="Debug Webview In Wechat">http://lipperzack.github.io/2015/08/23/debugWebviewInWechat/</a>
             <span class="copy-path" data-clipboard-text="原文: http://lipperzack.github.io/2015/08/23/debugWebviewInWechat/　　作者: LipperZack" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -337,6 +337,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/02/debugInAngular/">
+                    Debug in Angular (could use when hack)
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -352,7 +358,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Reqiure"><span class="toc-number">1.</span> <span class="toc-text">Reqiure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Debug-Steps"><span class="toc-number">2.</span> <span class="toc-text">Debug Steps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Other-Usage"><span class="toc-number">3.</span> <span class="toc-text">Other Usage</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Reqiure"><span class="toc-number">1.</span> <span class="toc-text">Reqiure</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Debug-Steps"><span class="toc-number">2.</span> <span class="toc-text">Debug Steps</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Other-Usage"><span class="toc-number">3.</span> <span class="toc-text">Other Usage</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -449,7 +455,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/01/02/debugInAngular/" title="上一篇: Debug in Angular (could use when hack)">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -461,7 +469,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2015/08/23/debugWebviewInWechat/">Debug Webview In Wechat</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/30/prototype/">深入浅出javascript原型和闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/02/addBaiduAnalytics/">hexo add baidu analytics</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/05/shadowsocks/">shadowsocks, a powerful tool you will need</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/28/aboutHEXO/">about Hexo</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/aboutLearningAndEducation/">about learning and education</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/debugInAngular/">Debug in Angular (could use when hack)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/23/debugWebviewInWechat/">Debug Webview In Wechat</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/30/prototype/">深入浅出javascript原型和闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/02/addBaiduAnalytics/">HEXO add Baidu Analytics</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/05/shadowsocks/">Shadowsocks, a powerful tool you will need</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/28/aboutHEXO/">About HEXO</a></li></ul>
 
 
 
