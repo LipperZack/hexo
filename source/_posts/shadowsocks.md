@@ -36,6 +36,8 @@ sudo apt-get install -y nodejs
 ##### RHEL, CentOS or Fedora
 ``` bash
 curl -sL https://rpm.nodesource.com/setup | bash -
+#or you can
+#yum install epel-release
 yum install -y nodejs
 ```
 ##### 源码安装
