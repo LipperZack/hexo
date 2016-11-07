@@ -30,6 +30,7 @@ $($0).scope().$digest()
 ```
 $($0).injector().get('MyService')
 $($0).injector().get('My') //Provider
+$($0).injector().get('$templateCache') //templateCache
 $($0).controller()
 ```
 
@@ -43,7 +44,21 @@ $($0).controller()
 # use as hack
 其实这样的话，完全能定位到一个组件的directive，界面的UI基本一览无遗
 
+
+# 查看所有的Directive
+```
+function Directives(module) {
+    var directives = [];
+    var invokes = angular.module(module)._invokeQueue;
+    for (var i in invokes) {
+        if (invokes[i][1] === "directive") directives.push(invokes[i][2]);
+    }
+    return directives;
+}
+```
+
 # refer
 [Tips & Tricks for debugging unfamiliar AngularJS code](http://eng.localytics.com/tips-and-tricks-for-debugging-unfamiliar-angularjs-code/)
 [Debugging AngularJS Apps from the Console](http://blog.ionic.io/angularjs-console/)
 [How can I test an AngularJS service from the console?](http://stackoverflow.com/questions/15527832/how-can-i-test-an-angularjs-service-from-the-console)
+[](http://stackoverflow.com/questions/19087752/list-registered-custom-directives-in-angularjs)
