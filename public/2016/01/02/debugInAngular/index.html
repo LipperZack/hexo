@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://lipperzack.github.io/2016/01/02/debugInAngular/index.html">
 <meta property="og:site_name" content="LipperZack's Blog">
 <meta property="og:description" content="开发angular也有一段时间了，使用上来说，大大提高了开发效率，搞个小网站就是分分钟的事。但开发没什么，主要头疼的问题是调试，当然可以在源码断点。但我要的是一个更优雅方便的方法，即网页任何元素，都能方便查看它的scope、controller等等">
-<meta property="og:updated_time" content="2016-09-08T09:32:20.000Z">
+<meta property="og:updated_time" content="2016-11-07T18:52:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Debug in Angular (could use when hack)">
 <meta name="twitter:description" content="开发angular也有一段时间了，使用上来说，大大提高了开发效率，搞个小网站就是分分钟的事。但开发没什么，主要头疼的问题是调试，当然可以在源码断点。但我要的是一个更优雅方便的方法，即网页任何元素，都能方便查看它的scope、controller等等">
@@ -181,7 +181,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/analytics/">analytics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closure/">closure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hack/">hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trick/">trick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型/">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/analytics/">analytics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angular/">angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closure/">closure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hack/">hack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object/">object</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trick/">trick</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wechat/">wechat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型/">原型</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/微信/">微信</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
                     </div>
                 </section>
                 
@@ -304,10 +304,11 @@
 <h1 id="1-查看元素scope"><a href="#1-查看元素scope" class="headerlink" title="1.查看元素scope"></a>1.查看元素scope</h1><p>chrome选定一个元素（$0就是chrome选定当前的元素）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$($0).scope()</span><br><span class="line">//或者</span><br><span class="line">angular.element($0).scope()</span><br></pre></td></tr></table></figure></p>
 <p>如果是isolate scope<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$($0).isolateScope()</span><br></pre></td></tr></table></figure></p>
 <h1 id="2-找到元素并改变"><a href="#2-找到元素并改变" class="headerlink" title="2.找到元素并改变"></a>2.找到元素并改变</h1><p>拿到scope后可以点<code>$parent</code>和<code>$root</code>找到你元素真正的scope<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$($0).scope().$digest()</span><br></pre></td></tr></table></figure></p>
-<h1 id="3-查看绑定的services-provider-controller"><a href="#3-查看绑定的services-provider-controller" class="headerlink" title="3.查看绑定的services/provider/controller"></a>3.查看绑定的services/provider/controller</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$($0).injector().get(&apos;MyService&apos;)</span><br><span class="line">$($0).injector().get(&apos;My&apos;) //Provider</span><br><span class="line">$($0).controller()</span><br></pre></td></tr></table></figure>
+<h1 id="3-查看绑定的services-provider-controller"><a href="#3-查看绑定的services-provider-controller" class="headerlink" title="3.查看绑定的services/provider/controller"></a>3.查看绑定的services/provider/controller</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$($0).injector().get(&apos;MyService&apos;)</span><br><span class="line">$($0).injector().get(&apos;My&apos;) //Provider</span><br><span class="line">$($0).injector().get(&apos;$templateCache&apos;) //templateCache</span><br><span class="line">$($0).controller()</span><br></pre></td></tr></table></figure>
 <h1 id="另外的工具Batarang（不推荐）"><a href="#另外的工具Batarang（不推荐）" class="headerlink" title="另外的工具Batarang（不推荐）"></a>另外的工具Batarang（不推荐）</h1><p>之前最简单暴力的想法，在chrome的store搜索angular，也就这么一个plugin，果断装之，然而并没有什么想象中的那么便利<br>首先是卡，在页面元素绑定多的时候，而且在scope的视图里的scope树，并不知道怎么去用它。。。<br>比较方便的是有个inspector，可以让你select，然后看里面的值。但我始终感觉没有console拿到的方便，比如一个函数，我并没有办法定位到源码。<br>另外的Service Dependencies貌似也没什么卵用</p>
 <h1 id="use-as-hack"><a href="#use-as-hack" class="headerlink" title="use as hack"></a>use as hack</h1><p>其实这样的话，完全能定位到一个组件的directive，界面的UI基本一览无遗</p>
-<h1 id="refer"><a href="#refer" class="headerlink" title="refer"></a>refer</h1><p><a href="http://eng.localytics.com/tips-and-tricks-for-debugging-unfamiliar-angularjs-code/" target="_blank" rel="external">Tips &amp; Tricks for debugging unfamiliar AngularJS code</a><br><a href="http://blog.ionic.io/angularjs-console/" target="_blank" rel="external">Debugging AngularJS Apps from the Console</a><br><a href="http://stackoverflow.com/questions/15527832/how-can-i-test-an-angularjs-service-from-the-console" target="_blank" rel="external">How can I test an AngularJS service from the console?</a></p>
+<h1 id="查看所有的Directive"><a href="#查看所有的Directive" class="headerlink" title="查看所有的Directive"></a>查看所有的Directive</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Directives(module) &#123;</span><br><span class="line">    var directives = [];</span><br><span class="line">    var invokes = angular.module(module)._invokeQueue;</span><br><span class="line">    for (var i in invokes) &#123;</span><br><span class="line">        if (invokes[i][1] === &quot;directive&quot;) directives.push(invokes[i][2]);</span><br><span class="line">    &#125;</span><br><span class="line">    return directives;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="refer"><a href="#refer" class="headerlink" title="refer"></a>refer</h1><p><a href="http://eng.localytics.com/tips-and-tricks-for-debugging-unfamiliar-angularjs-code/" target="_blank" rel="external">Tips &amp; Tricks for debugging unfamiliar AngularJS code</a><br><a href="http://blog.ionic.io/angularjs-console/" target="_blank" rel="external">Debugging AngularJS Apps from the Console</a><br><a href="http://stackoverflow.com/questions/15527832/how-can-i-test-an-angularjs-service-from-the-console" target="_blank" rel="external">How can I test an AngularJS service from the console?</a><br><a href="http://stackoverflow.com/questions/19087752/list-registered-custom-directives-in-angularjs" target="_blank" rel="external"></a></p>
 
       
     </div>
@@ -319,7 +320,7 @@
         <p><span>本文标题:</span><a href="/2016/01/02/debugInAngular/">Debug in Angular (could use when hack)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">LipperZack</a></p>
         <p><span>发布时间:</span>2016-01-02, 16:33:00</p>
-        <p><span>最后更新:</span>2016-09-08, 17:32:20</p>
+        <p><span>最后更新:</span>2016-11-08, 02:52:01</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/02/debugInAngular/" title="Debug in Angular (could use when hack)">http://lipperzack.github.io/2016/01/02/debugInAngular/</a>
             <span class="copy-path" data-clipboard-text="原文: http://lipperzack.github.io/2016/01/02/debugInAngular/　　作者: LipperZack" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -342,8 +343,8 @@
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2015/08/23/debugWebviewInWechat/">
-                    Debug Webview In Wechat
+                <a href="/2015/10/02/objectAndFunction/">
+                    Object and Function
                 </a>
             </div>
         
@@ -354,7 +355,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-查看元素scope"><span class="toc-number">1.</span> <span class="toc-text">1.查看元素scope</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-找到元素并改变"><span class="toc-number">2.</span> <span class="toc-text">2.找到元素并改变</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-查看绑定的services-provider-controller"><span class="toc-number">3.</span> <span class="toc-text">3.查看绑定的services/provider/controller</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#另外的工具Batarang（不推荐）"><span class="toc-number">4.</span> <span class="toc-text">另外的工具Batarang（不推荐）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#use-as-hack"><span class="toc-number">5.</span> <span class="toc-text">use as hack</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#refer"><span class="toc-number">6.</span> <span class="toc-text">refer</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-查看元素scope"><span class="toc-number">1.</span> <span class="toc-text">1.查看元素scope</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-找到元素并改变"><span class="toc-number">2.</span> <span class="toc-text">2.找到元素并改变</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-查看绑定的services-provider-controller"><span class="toc-number">3.</span> <span class="toc-text">3.查看绑定的services/provider/controller</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#另外的工具Batarang（不推荐）"><span class="toc-number">4.</span> <span class="toc-text">另外的工具Batarang（不推荐）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#use-as-hack"><span class="toc-number">5.</span> <span class="toc-text">use as hack</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看所有的Directive"><span class="toc-number">6.</span> <span class="toc-text">查看所有的Directive</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#refer"><span class="toc-number">7.</span> <span class="toc-text">refer</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -459,13 +460,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/08/23/debugWebviewInWechat/" title="下一篇: Debug Webview In Wechat">
+            <a href="/2015/10/02/objectAndFunction/" title="下一篇: Object and Function">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/aboutLearningAndEducation/">about learning and education</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/debugInAngular/">Debug in Angular (could use when hack)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/23/debugWebviewInWechat/">Debug Webview In Wechat</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/30/prototype/">深入浅出javascript原型和闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/02/addBaiduAnalytics/">HEXO add Baidu Analytics</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/05/shadowsocks/">Shadowsocks, a powerful tool you will need</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/28/aboutHEXO/">About HEXO</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/aboutLearningAndEducation/">about learning and education</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/debugInAngular/">Debug in Angular (could use when hack)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/02/objectAndFunction/">Object and Function</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/23/debugWebviewInWechat/">Debug Webview In Wechat</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/30/prototype/">深入浅出javascript原型和闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/02/addBaiduAnalytics/">HEXO add Baidu Analytics</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/05/shadowsocks/">Shadowsocks, a powerful tool you will need</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/28/aboutHEXO/">About HEXO</a></li></ul>
 
 
 

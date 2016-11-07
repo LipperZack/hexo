@@ -9,17 +9,18 @@
 
   <meta charset="utf-8">
   
-  <title>LipperZack&#39;s Blog</title>
+  <title>Object and Function | LipperZack&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="a place to live~ a place to hide~ a place to think~ a place to high！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LipperZack's Blog">
-<meta property="og:url" content="http://lipperzack.github.io/index.html">
+  <meta name="description" content="JavaScript 中 Object 和 Function 的关系很微妙Function instanceof Object 和 Object instanceof Function 都是 true从这个点切入，一窥下javascript的机制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Object and Function">
+<meta property="og:url" content="http://lipperzack.github.io/2015/10/02/objectAndFunction/index.html">
 <meta property="og:site_name" content="LipperZack's Blog">
-<meta property="og:description" content="a place to live~ a place to hide~ a place to think~ a place to high！">
+<meta property="og:description" content="JavaScript 中 Object 和 Function 的关系很微妙Function instanceof Object 和 Object instanceof Function 都是 true从这个点切入，一窥下javascript的机制">
+<meta property="og:updated_time" content="2016-09-26T03:29:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LipperZack's Blog">
-<meta name="twitter:description" content="a place to live~ a place to hide~ a place to think~ a place to high！">
+<meta name="twitter:title" content="Object and Function">
+<meta name="twitter:description" content="JavaScript 中 Object 和 Function 的关系很微妙Function instanceof Object 和 Object instanceof Function 都是 true从这个点切入，一窥下javascript的机制">
   
     <link rel="alternative" href="/atom.xml" title="LipperZack&#39;s Blog" type="application/atom+xml">
   
@@ -35,13 +36,8 @@
   
   <link rel="stylesheet" href="/css/style.css">
   
-      <style> .article { opacity: 0;} </style>
-  
   <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-    
-    
   
   
       <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
@@ -52,8 +48,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -264,133 +260,7 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-aboutLearningAndEducation" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/01/aboutLearningAndEducation/" class="article-date">
-      <time datetime="2016-01-31T17:12:00.000Z" itemprop="datePublished">2月 1 2016</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/01/aboutLearningAndEducation/">about learning and education</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>泛谈下学习的正确方法和中国教育的区别<br>学习应该广度遍历而不是深度遍历，更应该制造场景和完成成就，好奇心驱动<br>人一旦失去了好奇心，那么他已经死了</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/02/01/aboutLearningAndEducation/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-debugInAngular" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/02/debugInAngular/" class="article-date">
-      <time datetime="2016-01-02T08:33:00.000Z" itemprop="datePublished">1月 2 2016</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/02/debugInAngular/">Debug in Angular (could use when hack)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>开发angular也有一段时间了，使用上来说，大大提高了开发效率，搞个小网站就是分分钟的事。但开发没什么，主要头疼的问题是调试，当然可以在源码断点。但我要的是一个更优雅方便的方法，即网页任何元素，都能方便查看它的scope、controller等等</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debug/">debug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hack/">hack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/trick/">trick</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/01/02/debugInAngular/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-objectAndFunction" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-objectAndFunction" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2015/10/02/objectAndFunction/" class="article-date">
@@ -406,349 +276,145 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/02/objectAndFunction/">Object and Function</a>
+    <h1 class="article-title" itemprop="name">
+      Object and Function
     </h1>
   
 
       </header>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>JavaScript 中 Object 和 Function 的关系很微妙<br>Function instanceof Object 和 Object instanceof Function 都是 true<br>从这个点切入，一窥下javascript的机制</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+      <div class="article-info article-info-post">
+        
 
-      
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/object/">object</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prototype/">prototype</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a href="/2015/10/02/objectAndFunction/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-debugWebviewInWechat" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/08/23/debugWebviewInWechat/" class="article-date">
-      <time datetime="2015-08-22T19:24:00.000Z" itemprop="datePublished">8月 23 2015</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/23/debugWebviewInWechat/">Debug Webview In Wechat</a>
-    </h1>
-  
-
-      </header>
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>之前的<a href="http://bbs.mb.qq.com/thread-243399-1-1.html?fid=93&amp;gid=45">微信、手Q、Qzone之x5内核inspect调试解决方案</a>调试比较麻烦，现在新版本已经完善了X5中的debug解决方案。<br>You dont need alert any more. </p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
+        <p>JavaScript 中 Object 和 Function 的关系很微妙<br>Function instanceof Object 和 Object instanceof Function 都是 true<br>从这个点切入，一窥下javascript的机制</p>
+<a id="more"></a>
+<p>其实要解释清楚这一微妙现象的话，我们最好先从这<a href="https://raw.githubusercontent.com/coodict/javascript-in-one-pic/master/js%20in%20one%20pic.png" target="_blank" rel="external">这张图</a>看起。（图片有点大，大家自己移步观赏)</p>
+<h1 id="简单概述"><a href="#简单概述" class="headerlink" title="简单概述"></a>简单概述</h1><p># </p>
+<h1 id="refer"><a href="#refer" class="headerlink" title="refer"></a>refer</h1><p><a href="http://www.jb51.net/article/20168.htm" target="_blank" rel="external">JavaScript中Object和Function的关系小结</a><br><a href="http://www.jb51.net/article/24023.htm" target="_blank" rel="external">验证javascript中Object和Function的关系的三段简单代码</a><br><a href="http://zhidao.baidu.com/link?url=IZWUU0LgjThQ1ByTmwjzrvEFZTt0V-ZJPtoc-S-IYHfCsThAIrF1idCa6_2qbvOX8Rm_2g1pXHxIYl8w0iEdFgjCHhsjVx6dh5wWn2XWjvi" target="_blank" rel="external">javascript中Function 与Object的关系</a><br><a href="http://sentsin.com/web/159.html" target="_blank" rel="external">正确理解执行上下文和作用域链</a></p>
+<p><a href="https://github.com/coodict/javascript-in-one-pic" target="_blank" rel="external">js in one pic.png</a><br><a href="http://blog.rainy.im/2015/07/04/scope-chain-and-prototype-chain-in-js/" target="_blank" rel="external">图解Javascript上下文与作用域</a><br><a href="http://blog.rainy.im/2015/07/20/prototype-chain-in-js/" target="_blank" rel="external">图解Javascript原型链</a></p>
+<p><a href="http://ryanmorr.com/understanding-scope-and-context-in-javascript/" target="_blank" rel="external">Understanding Scope and Context in JavaScript</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" target="_blank" rel="external">this - JavaScript | MDN</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures" target="_blank" rel="external">闭包 - JavaScript | MDN</a></p>
+<h1 id="other-liks"><a href="#other-liks" class="headerlink" title="other liks"></a>other liks</h1><p><a href="http://v8project.blogspot.com/" target="_blank" rel="external">v8</a><br><a href="http://ryanmorr.com/" target="_blank" rel="external">Ryan Morr</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures" target="_blank" rel="external">闭包 in MDN</a></p>
 
       
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debug/">debug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wechat/">wechat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信/">微信</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2015/08/23/debugWebviewInWechat/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
     </div>
     
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-prototype" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/03/30/prototype/" class="article-date">
-      <time datetime="2015-03-29T17:24:00.000Z" itemprop="datePublished">3月 30 2015</time>
-</a>
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/10/02/objectAndFunction/">Object and Function</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">LipperZack</a></p>
+        <p><span>发布时间:</span>2015-10-02, 18:23:00</p>
+        <p><span>最后更新:</span>2016-09-26, 11:29:15</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/10/02/objectAndFunction/" title="Object and Function">http://lipperzack.github.io/2015/10/02/objectAndFunction/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://lipperzack.github.io/2015/10/02/objectAndFunction/　　作者: LipperZack" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+
+
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/30/prototype/">深入浅出javascript原型和闭包</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>javascript原型和闭包，一直是javascript中比较难理解的两个部分，却又非常重要、非常基础，也是与其他主流面向对象语言的最大区别。这部分网上教程遍地都是，水平也是层出不穷，但是真正能说对、而且说的透彻的非常少，为了不被复制粘贴的水军搞晕，所以还是按自己的思路整理了一套。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/closure/">closure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prototype/">prototype</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型/">原型</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2015/03/30/prototype/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-addBaiduAnalytics" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/03/02/addBaiduAnalytics/" class="article-date">
-      <time datetime="2015-03-01T20:23:00.000Z" itemprop="datePublished">3月 2 2015</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/02/debugInAngular/">
+                    Debug in Angular (could use when hack)
+                </a>
+            </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/02/addBaiduAnalytics/">HEXO add Baidu Analytics</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>由于pacman中<a href="http://www.google.cn/intl/zh-CN_ALL/analytics/learn/index.html">google analytics</a>比较慢，而且容易被Q，你懂得，so，添加百度统计backup。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/analytics/">analytics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2015/03/02/addBaiduAnalytics/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/02/05/shadowsocks/" class="article-date">
-      <time datetime="2015-02-04T19:18:12.000Z" itemprop="datePublished">2月 5 2015</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/02/05/shadowsocks/">Shadowsocks, a powerful tool you will need</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="Why-shadowsocks"><a href="#Why-shadowsocks" class="headerlink" title="Why shadowsocks?"></a>Why shadowsocks?</h1><p>You know the reason Y shadowsocks. so, Let’s get started:<br>But FYI, here the <a href="http://shadowsocks.org/en/index.html">Offical Site</a> and <a href="https://github.com/shadowsocks/shadowsocks">Source</a></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2015/02/05/shadowsocks/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-aboutHEXO" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/01/28/aboutHEXO/" class="article-date">
-      <time datetime="2015-01-27T19:24:00.000Z" itemprop="datePublished">1月 28 2015</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/08/23/debugWebviewInWechat/">
+                    Debug Webview In Wechat
+                </a>
+            </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/28/aboutHEXO/">About HEXO</a>
-    </h1>
-  
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><a href="http://hexo.io/">Hexo</a>, A fast, simple and powerful blog framework,powered by Node.js. Like <a href="http://jekyllrb.com/">jekyll</a>,it produce static html page for deployment, Support markdown and free hosting with GitHub Pages. Check <a href="http://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2015/01/28/aboutHEXO/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简单概述"><span class="toc-number">1.</span> <span class="toc-text">简单概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#refer"><span class="toc-number">2.</span> <span class="toc-text">refer</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#other-liks"><span class="toc-number">3.</span> <span class="toc-text">other liks</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Object and Function　| LipperZack's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
 
 
 
@@ -756,9 +422,55 @@
 
 
 
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2015/10/02/objectAndFunction/" data-title="Object and Function" data-url="http://lipperzack.github.io/2015/10/02/objectAndFunction/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lipperzack"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
 
-  
-  
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/02/debugInAngular/" title="上一篇: Debug in Angular (could use when hack)">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2015/08/23/debugWebviewInWechat/" title="下一篇: Debug Webview In Wechat">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/01/aboutLearningAndEducation/">about learning and education</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/02/debugInAngular/">Debug in Angular (could use when hack)</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/10/02/objectAndFunction/">Object and Function</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/23/debugWebviewInWechat/">Debug Webview In Wechat</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/30/prototype/">深入浅出javascript原型和闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/03/02/addBaiduAnalytics/">HEXO add Baidu Analytics</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/05/shadowsocks/">Shadowsocks, a powerful tool you will need</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/01/28/aboutHEXO/">About HEXO</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
