@@ -69,8 +69,9 @@ npm install -g shadowsocks
 ```
 比如我的配置，大家也可以使用，就是bandwagonhost的，有时候要经常重启
 ``` bash
+mkdir shadowsocks && cd shadowsocks && vi config.json
 {
-    "server":"104.224.161.153",
+    "server":"198.71.84.181",
     "server_port":8388,
     "local_port":1080,
     "password":"edmund",
@@ -81,7 +82,9 @@ npm install -g shadowsocks
 开机自启动
 编辑vps的rc.local，加入
 ``` bash
-nohup ssserver -c /root/shadowsocks/config.json > log &
+# which in CentOs
+vi /etc/rc.d/rc/local
+nohup ssserver -c /root/shadowsocks/config.json > /root/shadowsocks/log &
 ```
 ---
 ### Python
@@ -99,9 +102,8 @@ make && make install
 启动
 ``` bash
 nohup /usr/local/bin/ss-server -s IP地址 -p 端口 -k 密码 -m 加密方式 &
+nohup /usr/local/bin/ss-server -s 198.71.84.181 -p 8388 -k edmund -m aes-256-cfb &
 ```
-示例
-nohup /usr/local/bin/ss-server -s 11.22.33.44 -p 12345 -k 12345678 -m aes-256-cfb &
 其中
 -s 11.22.33.44 #指定服务器的IP地址，建议填0.0.0.0
 -p 12345 #指定服务器绑定的IP地址
@@ -109,7 +111,7 @@ nohup /usr/local/bin/ss-server -s 11.22.33.44 -p 12345 -k 12345678 -m aes-256-cf
 -m aes-256-cfb #指定加密方式为aes-256-cfb，如果不指定，默认为table方式，加密方式不大会影响速度，但是table非常不安全。
 加入开机启动：
 ``` bash
-echo "nohup /usr/local/bin/ss-server -s 11.22.33.44 -p 12345 -k 12345678 -m aes-256-cfb &" >> /etc/rc.local
+echo "nohup /usr/local/bin/ss-server -s 198.71.84.181 -p 8388 -k edmund -m aes-256-cfb &" >> /etc/rc.local
 ```
 请把IP 端口 密码 加密方式改成自己设置的。
 检测shadowsocks是否在运行：
@@ -126,6 +128,7 @@ iptables -A INPUT -p tcp --dport 端口 -j ACCEPT
 [various client](https://shadowsocks.com/client.html),
 MAC推荐GoagentX，支持各种协议、PAC，直接新建一个shadowsocks代理，里面全部按照服务器的配置就好。可以全局或者规则使用了。
 Windows推荐Goagent+，也是同样的配置一个shadowsocks，但是每个程序要自己去连代理，比如chrome的话要装switchysharp去连本地端口。
+如果访问不了可以问我要客户端
 
 
 参考：
