@@ -32,6 +32,11 @@ If you have any problem, try another way for luck.
 apt-get install curl
 curl -sL https://deb.nodesource.com/setup | sudo bash -
 sudo apt-get install -y nodejs
+sudo apt-get install -y npm
+sudo ln -s `which nodejs` /usr/bin/node
+# cus node command in Debian is nodejs
+# or sudo ln -s /usr/bin/nodejs /usr/bin/node
+# or sudo update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 ```
 ##### RHEL, CentOS or Fedora
 ``` bash
@@ -84,6 +89,8 @@ mkdir shadowsocks && cd shadowsocks && vi config.json
 ``` bash
 # which in CentOs
 vi /etc/rc.d/rc/local
+# which in Ubuntu 
+# vi /etc/rc.local
 nohup ssserver -c /root/shadowsocks/config.json > /root/shadowsocks/log &
 ```
 ---
