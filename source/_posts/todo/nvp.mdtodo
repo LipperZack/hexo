@@ -1,0 +1,40 @@
+[JavaScript: What excites me in 2017](https://medium.com/m/global-identity?redirectUrl=https://hackernoon.com/javascript-what-excites-me-in-2017-7681766b7d79)
+[react-europe](https://2016.react-europe.org/)
+
+* video
+  * [EVOLVING THE VISUAL PROGRAMMING ENVIRONMENT WITH REACT](https://www.awesomereact.com/playlists/all/WjJdaDXN5Vs)
+  * [in youtube](https://www.youtube.com/watch?v=WjJdaDXN5Vs)
+
+* 非常类似产品
+  * [ThreeNodes-page](http://idflood.github.io/ThreeNodes.js/index_optimized.html#example/spreads1.json)
+  * [ThreeNodes 1,298](https://github.com/idflood/ThreeNodes.js)
+  * [react-cosmos 2,120](https://github.com/react-cosmos/react-cosmos)
+
+* 已有产品
+  * [有哪些很好的 Web App？](https://www.zhihu.com/question/19727553)
+  * [可视化编程 | 星达红](http://www.xdhcn.com/?p=956)
+  * [Visual Programming Languages - Snapshots](http://blog.interfacevision.com/design/design-visual-progarmming-languages-snapshots/#blender-sverchok-add-on)
+  * [白鹭时代](https://www.egret.com/)
+
+* flow
+  * [Flow + Redux](https://flow.org/en/docs/frameworks/redux/) 
+
+* observable
+  * [redux-observable-page](https://redux-observable.js.org/)
+  * [redux-observable 3,062](https://github.com/redux-observable/redux-observable)
+  * [reactivex](http://reactivex.io/)
+  * [RxJS 入坑教程](https://495676.kuaizhan.com/12/26/p389409756d8fb3)
+  * [observable react libraries written in JavaScript](https://libraries.io/explore/javascript-react-libraries?keywords=observable)
+
+* rx & react
+  * [rxjs-react-component 52](https://github.com/christianalfoni/rxjs-react-component)
+  * [connect-rxjs-to-react 127](https://github.com/MichalZalecki/connect-rxjs-to-react)
+  * [React-RxJS 148](https://github.com/Cmdv/React-RxJS)
+  * [Redux in a single line of code with RxJS](http://rudiyardley.com/redux-single-line-of-code-rxjs/)
+  * [rx-react 575](https://github.com/fdecampredon/rx-react)
+  * [rx-connect 73](https://github.com/bsideup/rx-connect)
+  * [react-rx-component 84](https://github.com/acdlite/react-rx-component)
+    * [recompose 5,663](https://github.com/acdlite/recompose)
+  * [react-rx-components 4](https://github.com/besuikerd/react-rx-components)
+
+
