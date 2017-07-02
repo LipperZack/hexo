@@ -1,0 +1,3 @@
+排查可疑端口
+
+watch "lsof -P -i -n > tnew; (diff tnew told | egrep -v 'lsof -P -i -n|watch';); cat tnew > told"
