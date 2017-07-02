@@ -27,9 +27,6 @@ define([], function(){
               '-ms-transform: translate(-' + idx * 100 + '%, 0);',
               'transform: translate(-' + idx * 100 + '%, 0);'
           ];
-        //$wrap.css({
-        //    "transform": "translate(-"+idx*100+"%, 0 )"
-        //});
         $wrap[0].style.cssText = transform.join('');
         $(".icon-wrap").addClass("hide");
         $(".icon-wrap").eq(idx).removeClass("hide");
@@ -90,15 +87,14 @@ define([], function(){
     var miniArchives = function(){
         if(yiliaConfig.isPost) {
             $(".post-list").addClass("toc-article");
-            $(".post-list-item a").attr("target","_blank");
             $("#post-nav-button > a:nth-child(2)").click(function() {
-                $(".fa-bars, .fa-times").toggle();
+                $("#post-nav-button .fa-bars,#post-nav-button .fa-times").toggle();
                 $(".post-list").toggle(300);
                 if ($(".toc").length > 0) {
                     $("#toc, #tocButton").toggle(200, function() {
                         if ($(".switch-area").is(":visible")) {
                             $("#toc, .switch-btn, .switch-area").toggle();
-                            $("#tocButton").attr("value", valueHide);
+                            $("#tocButton").attr("value", yiliaConfig.toc[0]);
                             }
                         });
                 }
@@ -107,7 +103,7 @@ define([], function(){
                 }
             });
         }
-    }
+    }()
 
     if (yiliaConfig.jquery_ui[0]) {
         var tooltip = function(){
@@ -162,52 +158,54 @@ define([], function(){
                     }
                 })
             })
-        }
+        }()
     }
 
-    var search = function(){
-        require([yiliaConfig.rootUrl + 'js/search.js'], function(){
-            var inputArea = document.querySelector("#local-search-input");
-            var $HideWhenSearch = $("#toc, #tocButton, .post-list, #post-nav-button a:nth-child(2)");
-            var $resetButton = $("#search-form .fa-times");
-            var $resultArea = $("#local-search-result");
+    if (yiliaConfig.search) {
+        var search = function(){
+            require([yiliaConfig.rootUrl + 'js/search.js'], function(){
+                var inputArea = document.querySelector("#local-search-input");
+                var $HideWhenSearch = $("#toc, #tocButton, .post-list, #post-nav-button a:nth-child(2)");
+                var $resetButton = $("#search-form .fa-times");
+                var $resultArea = $("#local-search-result");
 
-            var getSearchFile = function(){
-                var search_path = "search.xml";
-                var path = yiliaConfig.rootUrl + search_path;
-                searchFunc(path, 'local-search-input', 'local-search-result');
-            }
-
-            var getFileOnload = inputArea.getAttribute('searchonload');
-            if (yiliaConfig.search && getFileOnload === "true") {
-                getSearchFile();
-            } else {
-                inputArea.onfocus = function(){ getSearchFile() }
-            }
-
-            var HideTocArea = function(){
-                $HideWhenSearch.css("visibility","hidden");
-                $resetButton.show();
-            }
-            inputArea.oninput = function(){ HideTocArea() }
-            inputArea.onkeydown = function(){ if(event.keyCode==13) return false}
-
-            resetSearch = function(){
-                $HideWhenSearch.css("visibility","initial");
-                $resultArea.html("");
-                document.querySelector("#search-form").reset();
-                $resetButton.hide();
-                $(".no-result").hide();
-            }
-
-            $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
-                if (!$(e.target).text()) {
-                    $(".no-result").show(200);
-                } else {
-                  $(".no-result").hide();
+                var getSearchFile = function(){
+                    var search_path = "search.xml";
+                    var path = yiliaConfig.rootUrl + search_path;
+                    searchFunc(path, 'local-search-input', 'local-search-result');
                 }
+
+                var getFileOnload = inputArea.getAttribute('searchonload');
+                if (yiliaConfig.search && getFileOnload === "true") {
+                    getSearchFile();
+                } else {
+                    inputArea.onfocus = function(){ getSearchFile() }
+                }
+
+                var HideTocArea = function(){
+                    $HideWhenSearch.css("visibility","hidden");
+                    $resetButton.show();
+                }
+                inputArea.oninput = function(){ HideTocArea() }
+                inputArea.onkeydown = function(){ if(event.keyCode==13) return false}
+
+                resetSearch = function(){
+                    $HideWhenSearch.css("visibility","initial");
+                    $resultArea.html("");
+                    document.querySelector("#search-form").reset();
+                    $resetButton.hide();
+                    $(".no-result").hide();
+                }
+
+                $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+                    if (!$(e.target).text()) {
+                        $(".no-result").show(200);
+                    } else {
+                      $(".no-result").hide();
+                    }
+                })
             })
-        });
+        }()
     }
 
     return {
@@ -215,9 +213,6 @@ define([], function(){
             resetTags();
             bind();
             Tips.init();
-            miniArchives();
-            tooltip();
-            search();
         }
     }
 });
