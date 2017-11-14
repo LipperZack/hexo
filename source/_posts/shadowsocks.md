@@ -14,9 +14,13 @@ First of all you may need a VPS out of the wall
 There are way too many choises here:
 [budgetvm](https://www.budgetvm.com/)		$25/year
 [bandwagonhost](http://www.laozuo.org/go/bandwagonhost-64m)	$3.99/year 
+[hostdare](https://www.hostdare.com) $21/year 
 other Links:
 [YardVPS,Virpus,BuyVM,BudgetVM](http://www.freehao123.com/yardvps-virpus/)
 [bandwagonhost from laozuo](http://www.laozuo.org/3269.html)
+[Hostdare 优惠码2017 Hostdare VPS 6折优惠](http://xianhuo.org/hostdare-youhuima2017-2.html)
+6折优惠码:  WR7OHZUO22;
+6折优惠码: LAOBULUO;
 
 More prise more stable, it's your choise
 
@@ -136,6 +140,17 @@ iptables -A INPUT -p tcp --dport 端口 -j ACCEPT
 MAC推荐GoagentX，支持各种协议、PAC，直接新建一个shadowsocks代理，里面全部按照服务器的配置就好。可以全局或者规则使用了。
 Windows推荐Goagent+，也是同样的配置一个shadowsocks，但是每个程序要自己去连代理，比如chrome的话要装switchysharp去连本地端口。
 如果访问不了可以问我要客户端
+
+
+---
+
+## SSR
+[shadowsocksR 一键安装](https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocksR-%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85)
+```
+wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
+chmod +x shadowsocksR.sh
+./shadowsocksR.sh 2>&1 | tee shadowsocksR.log
+```
 
 
 参考：
