@@ -71,7 +71,7 @@ npm install -g shadowsocks
     "server":"198.98.117.102", //这里是你vps的ip地址
     "server_port":8388, //服务器端监听端口
     "local_port":1080, //客户端监听端口，这里可无视
-    "password":"barfoo!", //连接密码，随便射一个
+    "password":"pa$$w0rd", //连接密码，随便射一个
     "timeout":600, //超时时间，默认即可
     "method":"aes-256-cfb" //加密方式，建议用“aes-256-cfb”，当然你也可以选择table。。。
 }
