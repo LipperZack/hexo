@@ -22,7 +22,7 @@
 <meta property="og:url" content="http://lipperzack.github.io/2015/02/05/shadowsocks/index.html">
 <meta property="og:site_name" content="LipperZack&#39;s Blog">
 <meta property="og:description" content="Why shadowsocks?You know the reason Y shadowsocks. so, Let’s get started:But FYI, here the Offical Site and Source">
-<meta property="og:updated_time" content="2017-11-14T02:34:29.908Z">
+<meta property="og:updated_time" content="2017-11-14T09:10:35.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shadowsocks, a powerful tool you will need">
 <meta name="twitter:description" content="Why shadowsocks?You know the reason Y shadowsocks. so, Let’s get started:But FYI, here the Offical Site and Source">
@@ -149,13 +149,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -273,7 +273,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap"><article id="post-shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -339,6 +339,9 @@
 <h2 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h2><p><a href="https://shadowsocks.com/client.html" target="_blank" rel="external">various client</a>,<br>MAC推荐GoagentX，支持各种协议、PAC，直接新建一个shadowsocks代理，里面全部按照服务器的配置就好。可以全局或者规则使用了。<br>Windows推荐Goagent+，也是同样的配置一个shadowsocks，但是每个程序要自己去连代理，比如chrome的话要装switchysharp去连本地端口。<br>如果访问不了可以问我要客户端</p>
 <hr>
 <h2 id="SSR"><a href="#SSR" class="headerlink" title="SSR"></a>SSR</h2><p><a href="https://github.com/iMeiji/shadowsocks_install/wiki/shadowsocksR-%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85" target="_blank" rel="external">shadowsocksR 一键安装</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</div><div class="line">chmod +x shadowsocksR.sh</div><div class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</div></pre></td></tr></table></figure></p>
+<p>配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</div><div class="line">    &quot;server_ipv6&quot;:&quot;[::]&quot;,</div><div class="line">    &quot;server_port&quot;:8989,</div><div class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;password&quot;:&quot;pa$$w0rd&quot;,</div><div class="line">    &quot;timeout&quot;:120,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">    &quot;protocol&quot;:&quot;origin&quot;,</div><div class="line">    &quot;protocol_param&quot;:&quot;&quot;,</div><div class="line">    &quot;obfs&quot;:&quot;plain&quot;,</div><div class="line">    &quot;obfs_param&quot;:&quot;&quot;,</div><div class="line">    &quot;redirect&quot;:&quot;&quot;,</div><div class="line">    &quot;dns_ipv6&quot;:false,</div><div class="line">    &quot;fast_open&quot;:false,</div><div class="line">    &quot;workers&quot;:1</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;server&quot;:&quot;0.0.0.0&quot;,</div><div class="line">  &quot;server_ipv6&quot;:&quot;::&quot;,</div><div class="line">  &quot;local_address&quot;:&quot;127.0.0.1&quot;,</div><div class="line">  &quot;local_port&quot;:1080,</div><div class="line">  &quot;port_password&quot;:&#123;</div><div class="line">   #纯 SS 不带混淆 端口25 密码为123456.</div><div class="line">   &quot;25&quot;:&quot;pa$$w0rd&quot;,</div><div class="line">   #端口443，密码pa$$w0rd ，protocol选择auth_chain_a。obfs选择tls1.2_ticket_auth，具体插件的介绍如下参考资料中</div><div class="line">   &quot;443&quot;:&#123;</div><div class="line">      &quot;protocol&quot;:&quot;auth_chain_a&quot;, </div><div class="line">      &quot;password&quot;:&quot;pa$$w0rd&quot;, </div><div class="line">      &quot;obfs&quot;:&quot;tls1.2_ticket_auth&quot;, </div><div class="line">      &quot;obfs_param&quot;:&quot;&quot;</div><div class="line">   &#125;,</div><div class="line">  #注意无论怎么变化，最后一个端口设置，不带逗号！</div><div class="line">   &quot;3389&quot;:&#123;</div><div class="line">      &quot;protocol&quot;:&quot;auth_aes128_md5&quot;, </div><div class="line">      &quot;password&quot;:&quot;pa$$w0rd&quot;, </div><div class="line">      &quot;obfs&quot;:&quot;tls1.2_ticket_auth&quot;, </div><div class="line">      &quot;obfs_param&quot;:&quot;&quot;</div><div class="line">    &#125;#此处没有逗号！</div><div class="line">  &#125;,</div><div class="line">  &quot;timeout&quot;:120,</div><div class="line">  #默认全局的加密方式，即上边各个端口的默认加密方式。一般为aes-256-cfb，移动设备的话，chacha20性能较好。</div><div class="line">  &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">  #protocol.协议定义插件的默认值，origin即使用原版SS协议，不混淆。即上面端口配置中，你没有设置 protocol 和 obfs 情况下，使用的默认值。</div><div class="line">  &quot;protocol&quot;: &quot;origin&quot;,</div><div class="line">  &quot;protocol_param&quot;: &quot;&quot;,</div><div class="line">   #protocol.协议定义插件的默认值，plain即使用原协议，不混淆。</div><div class="line">  &quot;obfs&quot;: &quot;plain&quot;,</div><div class="line">  &quot;obfs_param&quot;: &quot;&quot;,</div><div class="line">  &quot;redirect&quot;: &quot;&quot;,</div><div class="line">  &quot;dns_ipv6&quot;: false,</div><div class="line"> #TCP FAST OPEN ，打开</div><div class="line">  &quot;fast_open&quot;: true,</div><div class="line"> &quot;workers&quot;: 1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;0.0.0.0&quot;,</div><div class="line">    &quot;server_ipv6&quot;:&quot;[::]&quot;,</div><div class="line">    &quot;local_address&quot;:&quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;port_password&quot;:&#123;</div><div class="line">        &quot;8989&quot;:&quot;pa$$w0rd&quot;,</div><div class="line">        &quot;8990&quot;:&#123;</div><div class="line">            &quot;password&quot;:&quot;pa$$w0rd&quot;,</div><div class="line">            &quot;method&quot;:&quot;chacha20&quot;</div><div class="line">        &#125;,</div><div class="line">        &quot;8991&quot;:&#123;</div><div class="line">            &quot;password&quot;:&quot;pa$$w0rd&quot;, </div><div class="line">            &quot;obfs&quot;:&quot;tls1.2_ticket_auth&quot;, </div><div class="line">            &quot;obfs_param&quot;:&quot;&quot;,</div><div class="line">            &quot;method&quot;:&quot;chacha20&quot;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    &quot;timeout&quot;:120,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">    &quot;protocol&quot;:&quot;origin&quot;,</div><div class="line">    &quot;protocol_param&quot;:&quot;&quot;,</div><div class="line">    &quot;obfs&quot;:&quot;plain&quot;,</div><div class="line">    &quot;obfs_param&quot;:&quot;&quot;,</div><div class="line">    &quot;redirect&quot;:&quot;&quot;,</div><div class="line">    &quot;dns_ipv6&quot;:false,</div><div class="line">    &quot;fast_open&quot;:true,</div><div class="line">    &quot;workers&quot;:1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>参考：<br><a href="http://www.v5fm.com/centos-shadowsocks.html" target="_blank" rel="external">Centos搭建Shadowsocks的教程，并用Chrome成功访问Google</a><br><a href="http://dou.lu/1040.x" target="_blank" rel="external">ShadowSocks从入门到私通</a><br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager</a><br><a href="http://deffi.info/2014/11/20/VPS-+-Shadowsocks-+-COW-+Ocserv-+-AnyConnect-=-%E5%A4%9A%E5%B9%B3%E5%8F%B0%E7%BF%BB%E5%A2%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" target="_blank" rel="external">VPS + Shadowsocks + COW + Ocserv + AnyConnect = 多平台翻墙解决方案</a><br><a href="http://firedfox.tk/shadowsocks/" target="_blank" rel="external">If U dont wanna deploy</a></p>
 
       
@@ -348,17 +351,17 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/02/05/shadowsocks/">Shadowsocks, a powerful tool you will need</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">LipperZack</a></p>
-        <p><span>发布时间:</span>2015-02-05, 03:18:12</p>
-        <p><span>最后更新:</span>2017-11-14, 10:34:29</p>
+        <p><span>Title:</span><a href="/2015/02/05/shadowsocks/">Shadowsocks, a powerful tool you will need</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">LipperZack</a></p>
+        <p><span>Created:</span>2015-02-05, 03:18:12</p>
+        <p><span>Updated:</span>2017-11-14, 17:10:35</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/02/05/shadowsocks/" title="Shadowsocks, a powerful tool you will need">http://lipperzack.github.io/2015/02/05/shadowsocks/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://lipperzack.github.io/2015/02/05/shadowsocks/　　作者: LipperZack" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2015/02/05/shadowsocks/" title="Shadowsocks, a powerful tool you will need">http://lipperzack.github.io/2015/02/05/shadowsocks/</a>
+            <span class="copy-path" data-clipboard-text="From http://lipperzack.github.io/2015/02/05/shadowsocks/　　By LipperZack" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
         </p>
     </div>
 
@@ -385,7 +388,7 @@
 </article>
 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
+        <strong class="toc-title">Contents</strong>
         
             <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Why-shadowsocks"><span class="toc-number">1.</span> <span class="toc-text">Why shadowsocks?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#VPS"><span class="toc-number">1.1.</span> <span class="toc-text">VPS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Server"><span class="toc-number">1.2.</span> <span class="toc-text">Server</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#NPM"><span class="toc-number">1.2.1.</span> <span class="toc-text">NPM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Install-Node"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">Install Node</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Debian-and-Ubuntu"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text">Debian and Ubuntu</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#RHEL-CentOS-or-Fedora"><span class="toc-number">1.2.1.1.2.</span> <span class="toc-text">RHEL, CentOS or Fedora</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#源码安装"><span class="toc-number">1.2.1.1.3.</span> <span class="toc-text">源码安装</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Install-shadowsocks"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">Install shadowsocks</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Config-shadowsocks"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">Config shadowsocks</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python"><span class="toc-number">1.2.2.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Source"><span class="toc-number">1.2.3.</span> <span class="toc-text">Source</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Client"><span class="toc-number">1.3.</span> <span class="toc-text">Client</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSR"><span class="toc-number">1.4.</span> <span class="toc-text">SSR</span></a></li></ol></li></ol>
         
@@ -401,10 +404,10 @@
         }
     </style>
 
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 
     <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
     </script>
 
 
@@ -462,15 +465,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/03/02/addBaiduAnalytics/" title="上一篇: HEXO add Baidu Analytics">
+            <a href="/2015/03/02/addBaiduAnalytics/" title="Pre: HEXO add Baidu Analytics">
                 <i class="fa fa-angle-left"></i>
             </a>
         
 
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2015/01/28/aboutHEXO/" title="下一篇: About HEXO">
+            <a href="/2015/01/28/aboutHEXO/" title="Next: About HEXO">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -493,14 +496,14 @@
                 2016-2017 LipperZack
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -509,7 +512,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -542,9 +545,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window

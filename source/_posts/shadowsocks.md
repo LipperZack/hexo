@@ -151,6 +151,100 @@ wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsoc
 chmod +x shadowsocksR.sh
 ./shadowsocksR.sh 2>&1 | tee shadowsocksR.log
 ```
+配置文件
+```
+{
+    "server":"0.0.0.0",
+    "server_ipv6":"[::]",
+    "server_port":8989,
+    "local_address":"127.0.0.1",
+    "local_port":1080,
+    "password":"pa$$w0rd",
+    "timeout":120,
+    "method":"aes-256-cfb",
+    "protocol":"origin",
+    "protocol_param":"",
+    "obfs":"plain",
+    "obfs_param":"",
+    "redirect":"",
+    "dns_ipv6":false,
+    "fast_open":false,
+    "workers":1
+}
+```
+
+```
+{
+  "server":"0.0.0.0",
+  "server_ipv6":"::",
+  "local_address":"127.0.0.1",
+  "local_port":1080,
+  "port_password":{
+   #纯 SS 不带混淆 端口25 密码为123456.
+   "25":"pa$$w0rd",
+   #端口443，密码pa$$w0rd ，protocol选择auth_chain_a。obfs选择tls1.2_ticket_auth，具体插件的介绍如下参考资料中
+   "443":{
+      "protocol":"auth_chain_a", 
+      "password":"pa$$w0rd", 
+      "obfs":"tls1.2_ticket_auth", 
+      "obfs_param":""
+   },
+  #注意无论怎么变化，最后一个端口设置，不带逗号！
+   "3389":{
+      "protocol":"auth_aes128_md5", 
+      "password":"pa$$w0rd", 
+      "obfs":"tls1.2_ticket_auth", 
+      "obfs_param":""
+    }#此处没有逗号！
+  },
+  "timeout":120,
+  #默认全局的加密方式，即上边各个端口的默认加密方式。一般为aes-256-cfb，移动设备的话，chacha20性能较好。
+  "method":"aes-256-cfb",
+  #protocol.协议定义插件的默认值，origin即使用原版SS协议，不混淆。即上面端口配置中，你没有设置 protocol 和 obfs 情况下，使用的默认值。
+  "protocol": "origin",
+  "protocol_param": "",
+   #protocol.协议定义插件的默认值，plain即使用原协议，不混淆。
+  "obfs": "plain",
+  "obfs_param": "",
+  "redirect": "",
+  "dns_ipv6": false,
+ #TCP FAST OPEN ，打开
+  "fast_open": true,
+ "workers": 1
+}
+```
+
+```
+{
+    "server":"0.0.0.0",
+    "server_ipv6":"[::]",
+    "local_address":"127.0.0.1",
+    "local_port":1080,
+    "port_password":{
+        "8989":"pa$$w0rd",
+        "8990":{
+            "password":"pa$$w0rd",
+            "method":"chacha20"
+        },
+        "8991":{
+            "password":"pa$$w0rd", 
+            "obfs":"tls1.2_ticket_auth", 
+            "obfs_param":"",
+            "method":"chacha20"
+        }
+    },
+    "timeout":120,
+    "method":"aes-256-cfb",
+    "protocol":"origin",
+    "protocol_param":"",
+    "obfs":"plain",
+    "obfs_param":"",
+    "redirect":"",
+    "dns_ipv6":false,
+    "fast_open":true,
+    "workers":1
+}
+```
 
 
 参考：
